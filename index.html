@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="instagram_cloneCoding">
+    <meta name="author" content="JaePaNi">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41c5389666.js" crossorigin="anonymous"></script>
+    <script src="/index.js" defer></script>
+    <title>Instagram</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__wrap">
+            <div class="navbar__logo">
+                <a href="#">
+                    <img src="./images/instagram_logo.png" alt="instagram logo">
+                </a>
+            </div>
+            <div class="navbar__search">
+                <input type="text" height="200px" placeholder="검색">
+            </div>
+            <div class="navbar__menu">
+                <div class="navbar__menu__wrap">
+                    <div class="menu"><i class="fas fa-home"></i></div>
+                    <div class="menu"><i class="far fa-comment-alt"></i></div>
+                    <div class="menu"><i class="fab fa-wpexplorer"></i></div>
+                    <div class="menu"><i class="far fa-heart"></i></div>
+                    <div class="menu">
+                        <img src="./images/profile.jpg" alt="user profile" class="userInfo__user">
+                        <div class="userInfo__wrap hidden">
+                            <div class="userInfo__profile">프로필</div>
+                            <div class="userInfo__saved">저장됨</div>
+                            <div class="userInfo__setting">설정</div>
+                            <div class="userInfo__accountConversion">계정 전환</div>
+                            <div class="userInfo__logout">로그아웃</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section -->
+    <section id="section">
+        <!-- Section Story -->
+        <div class="section__story">
+            <ul class="story__lists">
+                <li class="story_list">
+                    <div class="story__img">
+                        <img class="story__storyUserImage" src="./images/profile.jpg" alt="user profile" width="100px"
+                            height="100px">
+                    </div>
+                    <div class="story__userName">JaePaNi</div>
+                </li>
+                <li class="story_list">
+                    <div class="story__img">
+                        <img class="story__storyUserImage" src="./images/profile.jpg" alt="user profile" width="100px"
+                            height="100px">
+                    </div>
+                    <div class="story__userName">JaePaNi</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section Content -->
+        <div class="section__content">
+            <!-- Content Header -->
+            <div class="content__header">
+                <div class="header__userImage">
+                    <img class="header__userImage" src="./images/profile.jpg" alt="user profile" width="100px"
+                        height="100px">
+                </div>
+                <div class="header__userName">
+                    userName
+                </div>
+                <div class="header__menu">
+                    menu pop up
+                </div>
+            </div>
+
+            <!-- Section Content Images -->
+            <div class="content__images">
+                <img src="./images/post.jpg" alt="content Image" class="content__image" width="500px" height="auto">
+            </div>
+
+            <!-- Section Content Images Count -->
+            <div class="section__image__counts">
+                <div class="image__count">1</div>
+                <div class="image__count">2</div>
+                <div class="image__count">3</div>
+            </div>
+
+            <!-- Section Content Bottom -->
+            <div class="section__bottom">
+                <!-- Botto, Buttons -->
+                <div class="bottom__buttons">
+                    <div class="button__like">like</div>
+                    <div class="button__comments">comments</div>
+                    <div class="button__share">share</div>
+                    <div class="button__bookmark">bookmark</div>
+                </div>
+
+                <!-- Bottom Like Counts -->
+                <div class="bottom__likeCount">
+                    <span>몇 명이 좋아합니다.</span>
+                </div>
+
+                <!-- Bottm Comments -->
+                <div class="bottom__comment">
+                    <span class="comment__userName">JaePaNi</span>
+                    <span class="comment__content">사용자 작성 글 및 #해시태그</span>
+                </div>
+
+                <div class="bottom__time">
+                    10분 전
+                </div>
+
+                <div class="bottom__reply">
+                    <input type="text" class="reply__input">
+                    <span class="reply__regist">게시</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aside -->
+    <aside id="aside">
+        <div class="aside__wrap">
+            <!-- Aside User -->
+            <div class="aside__user">
+                <img src="./images/profile.jpg" alt="user image" class="aside__userImage">
+                <div class="aside__userId">jaehwan0917</div>
+                <div class="aside__userName">JaePaNi</div>
+                <div class="aside__changeUser">전환</div>
+            </div>
+
+            <!-- Aside Recommend -->
+            <div class="aside__recommends">
+                <div class="recommends__top">
+                    <span class="recommends__title">회원님을 위한 추천</span>
+                    <span class="recommends__moreShow">모두 보기</span>
+                </div>
+                <div class="recommends__userList">
+                    <div class="recommends__user">
+                        <img src="./images/profile.jpg" alt="user image" class="recommends__userImage">
+                        <div class="recommends__userId">jaehwan0917</div>
+                        <div class="recommends__userName">jaepani501님이 팔로우 합니다.</div>
+                        <div class="recommends__changeUser">팔로우</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</body>
+
+</html>
