@@ -34,6 +34,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     --font-regular: 18px;
     --font-small: 16px;
     --font-micro: 14px;
+    --font-micro2: 12px;
 
     /* Font weight */
     --weight-bold: 700;
@@ -45,6 +46,8 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 
     /* Animation */
     --animation-duration: 250ms;
+
+    --border-radius: 3px;
 }
 
 body {
@@ -89,7 +92,7 @@ ul {
 
 .navbar__search input {
     border: solid 1px var(--color-light-grey);
-    border-radius: 3px;
+    border-radius: var(--border-radius);
 }
 
 .navbar__search input {
@@ -115,4 +118,60 @@ ul {
     height: 22px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+/* Section */
+#section__root {
+    display: flex;
+}
+
+#section {
+    background-color: var(--color-light-white);
+    flex-grow: 5;
+}
+
+.section__wrap {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section Story */
+.section__story__wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.section__story {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-grey);
+    border-radius: var(--border-radius);
+    margin: 30px 0;
+    padding: 15px;
+    display: flex;
+    overflow: auto;
+}
+
+.story__lists {
+    margin: 0 8px;
+}
+
+.story__image img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.story__userName {
+    font-size: var(--font-micro2);
+}
+
+
+
+.section__content {
+    margin: 30px 0;
+}
+
+/* Aside */
+#aside {
+    flex-grow: 1;
 }
