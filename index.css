@@ -27,6 +27,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     --color-orange: #feb546;
     --color-black: #000000;
     --color-orange-hard: #da8300;
+    --color-red: #ff0000;
 
     /* Font size */
     --font-large: 48px;
@@ -35,6 +36,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     --font-small: 16px;
     --font-micro: 14px;
     --font-micro2: 12px;
+    --font-micro3: 10px;
 
     /* Font weight */
     --weight-bold: 700;
@@ -238,6 +240,120 @@ ul {
 .content__image__arrorLeft {
     margin-left: 7px;
 }
+
+
+
+
+/* Section Content Image Count */
+.section__image__counts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.image__count {
+    margin: 0 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-light-grey);
+}
+
+.image__count.action {
+    background-color: var(--color-blue-hard);
+}
+
+
+
+/* Section Content Bottim */
+/* Bottom Button */
+.section__bottom {
+    position: relative;
+    top: -30px;
+}
+
+.section__bottom__wrap {
+    padding: 0 20px;
+}
+
+.bottom__buttons {
+    display: flex;
+}
+
+.bottom__buttons div {
+    cursor: pointer;
+}
+
+.button__comments {
+    margin: 0 10px;
+}
+
+.button__like {
+    position: absolute;
+}
+
+.button__unbookmark,
+.button__bookmark {
+    position: absolute;
+    right: 20px;
+}
+
+/* Bottim Like Count */
+.bottom__likeCount {
+    font-size: var(--font-micro);
+    position: relative;
+    top: 8px;
+}
+
+/* Bottom Comment */
+.bottom__comment,
+.bottom__time,
+.bottom__replyLists,
+.bottom__replyInput {
+    position: relative;
+}
+
+.bottom__comment {
+    top: 15px;
+    font-size: var(--font-micro);
+}
+
+.comment__userName {
+    font-weight: var(--weight-bold);
+    display: inline-block;
+}
+
+.comment__content {
+    /* background-color: var(--color-pink); */
+}
+
+/* Bottom Reply */
+.bottom__replyLists {
+    top: 20px;
+    margin: 10px 0;
+}
+
+.bottom__reply {
+    font-size: var(--font-micro);
+}
+
+.reply__userName {
+    font-weight: var(--weight-bold);
+}
+
+/* Botton Time */
+.bottom__time {
+    font-size: var(--font-micro3);
+    top: 20px;
+}
+
+/* Bottom Reply Input */
+.bottom__replyInput {
+    top: 30px;
+    margin-bottom: 10px;
+}
+
 
 /* Aside */
 #aside {
