@@ -136,7 +136,6 @@ ul {
 }
 
 /* Section Story */
-
 .section__story {
     background-color: var(--color-white);
     border: 1px solid var(--color-light-grey);
@@ -162,9 +161,65 @@ ul {
 }
 
 
-
+/* Section Content */
 .section__content {
-    margin: 25px 0;
+    margin-bottom: 30px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: var(--border-radius);
+}
+
+/* Section Content Header */
+.content__header {
+    background-color: var(--color-white);
+}
+
+.content__header__wrap {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    height: 60px;
+}
+
+.header__wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__userImage img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.header__userNamelocation {
+    margin-left: 16px;
+    text-align: left;
+}
+
+.header__userName {
+    font-size: var(--font-micro);
+}
+
+.header__location {
+    font-size: var(--font-micro2);
+}
+
+.header__menu {
+    cursor: pointer;
+}
+
+
+/* Section Content Images */
+.content__images {
+    display: flex;
+    overflow: hidden;
+}
+
+.content__images img {
+    width: 100%;
+    height: auto;
 }
 
 /* Aside */
