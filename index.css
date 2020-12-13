@@ -352,6 +352,23 @@ ul {
 .bottom__replyInput {
     top: 30px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.replyInput__input__wrap {
+    flex-grow: 5;
+}
+
+.replyInput__input__wrap input {
+    width: 97%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.replyInput__input__wrap input:focus {
+    outline: none;
 }
 
 
