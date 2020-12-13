@@ -215,11 +215,28 @@ ul {
 .content__images {
     display: flex;
     overflow: hidden;
+    position: relative;
 }
 
 .content__images img {
-    width: 100%;
-    height: auto;
+    min-width: 100%;
+    height: 500px;
+}
+
+.content__image__arrorLeft,
+.content__image__arrorRight{
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.content__image__arrorRight {
+    right: 0%;
+    margin-right: 7px;
+}
+
+.content__image__arrorLeft {
+    margin-left: 7px;
 }
 
 /* Aside */
