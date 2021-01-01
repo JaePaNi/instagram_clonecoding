@@ -109,11 +109,11 @@ ul {
     height: 28px;
 }
 
-.navbar__menu__wrap {   
+.navbar__menu__wrap {
     display: flex;
 }
 
-.menu {
+.menu__home, .menu__dm, .menu__content, .menu__like, .menu__profile {
     margin: 0 10px;
 }
 
@@ -128,8 +128,35 @@ ul {
     cursor: pointer;
 }
 
+.userInfos__wrap {
+    position: absolute;
+    margin-left: -170px;
+    background-color: var(--color-white);
+    width: 200px;
+    box-shadow: 1px 1px 1px var(--color-light-grey);
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.userInfo {
+    text-align: left;
+    padding: 10px 5px;
+    /*margin-left: 10px;*/
+}
 
+.userInfo span {
+    margin-left: 10px;
+}
+
+.userInfo:hover {
+    background-color: var(--color-light-white);
+}
+
+.userInfo__line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-light-grey);
+}
 
 /* Section */
 #section__root {
@@ -154,12 +181,29 @@ ul {
     border-radius: var(--border-radius);
     margin: 30px 0;
     padding: 15px;
-    display: flex;
+    /*display: flex;*/
     overflow: hidden;
+}
+
+.section__story__slider {
+    display: flex;
+}
+
+.section__story__arrowLeft,
+.section__story__arrowRight {
+    position: absolute;
+    top: 125px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.section__story__arrowRight {
+    margin-left: 555px;
 }
 
 .story__lists {
     margin: 0 11px;
+    position: relative;
 }
 
 .story__image img {
@@ -236,7 +280,7 @@ ul {
 }
 
 .content__image__arrorLeft,
-.content__image__arrorRight{
+.content__image__arrorRight {
     position: absolute;
     top: 50%;
     cursor: pointer;
@@ -250,8 +294,6 @@ ul {
 .content__image__arrorLeft {
     margin-left: 7px;
 }
-
-
 
 
 /* Section Content Image Count */
@@ -273,7 +315,6 @@ ul {
 .image__count.action {
     background-color: var(--color-blue-hard);
 }
-
 
 
 /* Section Content Bottim */
