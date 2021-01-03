@@ -1,5 +1,5 @@
 'use strict'
-
+//navbar 부분
 /*navbar profile click시 menu list 표시,감추기*/
 const navbarProfile = document.querySelector('.userInfo__user');
 const navbarProfileMenu = document.querySelector('.userInfos__wrap');
@@ -8,22 +8,83 @@ navbarProfile.addEventListener('click', () => {
     navbarProfileMenu.classList.toggle('hidden');
 });
 
-/*story slide*/
+//story부분
+/*content story slide*/
 const storyRightButton = document.querySelector('.section__story__arrowRight');
-const story
-const storySlider = document.querySelector('.section__story__slider');
+const storyLeftButton = document.querySelector('.section__story__arrowLeft');
 const storyList = document.querySelectorAll('.story__lists');
 const storyLength = document.querySelectorAll('.story__lists').length;
 const storyWidth = 67;
-const count = 4;
+const slideCount = 4;
+let storyCount = 0;
 let valueCount = 0;
 
-storyRightButton.addEventListener('click', () => {
-    console.log('click');
-    valueCount += storyWidth * count;
+const storyRightButtonClick = () => {
+    storyCount += 1;
+    if (storyCount > 0) storyLeftButton.classList.remove('hidden');
+    valueCount += storyWidth * slideCount;
     for (let i = 0; i < storyLength; i++) {
-        console.log(storyList[i]);
+        storyList[i].style.transition = "300ms";
         storyList[i].style.left = `-${valueCount}px`;
-        console.log(storyList[i].style.left);
+        storyList[i].style.left = `-${valueCount}px`;
     }
-});
+}
+
+const storyLeftButtonClick = () => {
+    storyCount -= 1;
+    if (storyCount === 0) storyLeftButton.classList.add('hidden');
+    valueCount -= storyWidth * slideCount;
+    for (let i = 0; i < storyLength; i++) {
+        storyList[i].style.transition = "300ms";
+        storyList[i].style.left = `-${valueCount}px`;
+    }
+}
+
+storyRightButton.addEventListener('click', storyRightButtonClick);
+storyLeftButton.addEventListener('click', storyLeftButtonClick);
+
+
+//content 부분
+/*content header 부분 사용자 이름 및 위치 추가*/
+const selectSectionWrap = document.querySelector('.section__wrap');
+let tags = '';
+for(const i in postData) {
+    tags = `
+    <div class="section__content">
+        <div class="content__header">
+            <div class="content__header__wrap">
+                <div class="header__userImage">
+                    <img class="header__userImage" src="./images/profile.jpg" alt="user profile"/>
+                </div>
+                <div class="header__wrap">
+                    <div class="header__userNamelocation">
+                        <div class="header__userName">${postData[i].username}</div>
+                        <div class="header__location">${postData[i].localtion}</div>
+                    </div>
+                    <div class="header__menu"><i class="fas fa-ellipsis-h"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    selectSectionWrap.insertAdjacentHTML('beforeend',tags);
+}
+
+const selectSectionContent = document.querySelectorAll('.section__content');
+
+//section content images add
+for(const i in postData) {
+    tags = `
+    <div class="content__images">
+        <div class="content__image__wrap">
+            ${postData[i].images.map(e => `<img src=${e} alt="content Image" class="content__image">`)}
+        </div>
+        
+        <div class="content__image__arrorLeft hidden"><i class="fas fa-arrow-circle-left"></i></div>
+        <div class="content__image__arrorRight hidden"><i class="fas fa-arrow-circle-right"></i></div>
+    </div>
+    `;
+    selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
+}
+
+//section content images count add
