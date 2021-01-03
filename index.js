@@ -84,15 +84,35 @@ for (const i in postData) {
         <div class="content__image__arrorRight hidden"><i class="fas fa-arrow-circle-right"></i></div>
     </div>
     `;
+
+    postData[i].images.map(() => tags = tags.replace(',', ''));
+
     selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
+}
+
+let move = 0;
+//section content images arrows remove hidden & click event
+//이미지 우측으로 넘기는 이벤트..
+for (const i in postData) {
+    const imageRightArrow = document.querySelectorAll('.content__image__arrorRight');
+    const imageWrap = document.querySelectorAll('.content__image');
+
+    if (postData[i].images.length > 1) imageRightArrow[i].classList.remove('hidden');
+    // imageRightArrow[i].addEventListener('click', () => {
+    //     move += 100;
+    //     console.log(`move :: ${move}`);
+    //     for (const j in postData[i].images) {
+    //         imageWrap[j].style.right = `${move}%`;
+    //     }
+    // });
 }
 
 //section content images count add
 for (const i in postData) {
     const selectSectionContent = document.querySelectorAll('.section__content');
     const get = postData[i].images.map((value, index) => index === 0 ?
-            '<div class="image__count action"></div>' : '<div class="image__count"></div>'
-        )
+        '<div class="image__count action"></div>' : '<div class="image__count"></div>'
+    )
     tags = `
     <div class="section__image__counts">
         ${get.map(data => data)}
@@ -100,13 +120,13 @@ for (const i in postData) {
     `;
 
     //map기능 사용하면 ','로 구분되어 삭제하기 위한 작업
-    postData[i].images.map(() => tags = tags.replace(',',''));
+    postData[i].images.map(() => tags = tags.replace(',', ''));
 
     selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
 }
 
 //section content bottom & bottom wrap
-for(const i in postData) {
+for (const i in postData) {
     const selectSectionContent = document.querySelectorAll('.section__content');
     tags = `
     <div class="section__bottom">
@@ -117,7 +137,7 @@ for(const i in postData) {
 }
 
 //section content bottom
-for(const i in postData){
+for (const i in postData) {
     const selectSectionBottomWrap = document.querySelectorAll('.section__bottom__wrap');
     const get = postData[i].reply.map((value, index) => `
         <div>
@@ -164,6 +184,6 @@ for(const i in postData){
         </div>
     </div>
     `
-    postData[i].reply.map(() => tags = tags.replace(',',''));
+    postData[i].reply.map(() => tags = tags.replace(',', ''));
     selectSectionBottomWrap[i].insertAdjacentHTML('beforeend', tags);
 }
