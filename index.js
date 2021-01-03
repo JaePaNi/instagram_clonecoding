@@ -48,7 +48,7 @@ storyLeftButton.addEventListener('click', storyLeftButtonClick);
 /*content header 부분 사용자 이름 및 위치 추가*/
 const selectSectionWrap = document.querySelector('.section__wrap');
 let tags = '';
-for(const i in postData) {
+for (const i in postData) {
     tags = `
     <div class="section__content">
         <div class="content__header">
@@ -67,13 +67,13 @@ for(const i in postData) {
         </div>
     </div>
     `;
-    selectSectionWrap.insertAdjacentHTML('beforeend',tags);
+    selectSectionWrap.insertAdjacentHTML('beforeend', tags);
 }
 
-const selectSectionContent = document.querySelectorAll('.section__content');
 
 //section content images add
-for(const i in postData) {
+for (const i in postData) {
+    const selectSectionContent = document.querySelectorAll('.section__content');
     tags = `
     <div class="content__images">
         <div class="content__image__wrap">
@@ -88,3 +88,19 @@ for(const i in postData) {
 }
 
 //section content images count add
+for (const i in postData) {
+    const selectSectionContent = document.querySelectorAll('.section__content');
+    const get = postData[i].images.map((value, index) => index === 0 ?
+            '<div class="image__count action"></div>' : '<div class="image__count"></div>'
+        )
+    tags = `
+     <div class="section__image__counts">
+        ${get.map(data => data)}
+    </div>
+    `;
+
+    //map기능 사용하면 ','로 구분되어 삭제하기 위한 작업
+    postData[i].images.map(() => tags = tags.replace(',',''));
+
+    selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
+}
