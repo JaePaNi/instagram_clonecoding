@@ -94,7 +94,7 @@ for (const i in postData) {
             '<div class="image__count action"></div>' : '<div class="image__count"></div>'
         )
     tags = `
-     <div class="section__image__counts">
+    <div class="section__image__counts">
         ${get.map(data => data)}
     </div>
     `;
@@ -103,4 +103,67 @@ for (const i in postData) {
     postData[i].images.map(() => tags = tags.replace(',',''));
 
     selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
+}
+
+//section content bottom & bottom wrap
+for(const i in postData) {
+    const selectSectionContent = document.querySelectorAll('.section__content');
+    tags = `
+    <div class="section__bottom">
+        <div class="section__bottom__wrap"></div>
+    </div>
+    `
+    selectSectionContent[i].insertAdjacentHTML('beforeend', tags);
+}
+
+//section content bottom
+for(const i in postData){
+    const selectSectionBottomWrap = document.querySelectorAll('.section__bottom__wrap');
+    const get = postData[i].reply.map((value, index) => `
+        <div>
+            <span class="reply__userName">${value.replyUserName}</span>
+            <span class="reply__userComment">${value.replyUserComment}</span>
+        </div>`)
+
+    tags = `
+    <div class="bottom__buttons">
+        <div class="button__unlike"><i class="far fa-heart"></i></div>
+        <div class="button__like hidden"><i class="fas fa-heart"></i></div>
+        <div class="button__comments"><i class="far fa-comment"></i></div>
+        <div class="button__share"><i class="far fa-share-square"></i></div>
+        <div class="button__unbookmark"><i class="far fa-bookmark"></i></div>
+        <div class="button__bookmark hidden"><i class="fas fa-bookmark"></i></div>
+    </div>
+    
+    <div class="bottom__likeCount">
+        <span>여러 명이 좋아합니다.</span>
+    </div>
+    
+    <div class="bottom__comment">
+        <span class="comment__userName">${postData[i].username}</span>
+        <span class="comment__content">${postData[i].userComment}</span>
+        <span class="comment__more hidden">더 보기</span>
+    </div>
+    
+    <div class="bottom__replyLists">
+        <div class="bottom__reply">
+            ${get.map(data => data)}
+        </div>
+    </div>
+    
+    <div class="bottom__time">
+        10분 전
+    </div>
+    
+    <div class="bottom__replyInput">
+        <div class="replyInput__input__wrap">
+            <input type="text" class="reply__input" placeholder="댓글 달기...">
+        </div>
+        <div class="replyInput__regist__wrap">
+            <span class="reply__regist">게시</span>
+        </div>
+    </div>
+    `
+    postData[i].reply.map(() => tags = tags.replace(',',''));
+    selectSectionBottomWrap[i].insertAdjacentHTML('beforeend', tags);
 }
