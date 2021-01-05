@@ -301,9 +301,10 @@ const inputReply = () => {
     selectReplyRegist.forEach((data, index) => {
         selectReplyRegist[index].addEventListener('click', () => {
             selectBottomReply[index].innerHTML = '';
+            const randomNickname = makeid();
             selectReplyInput[index].value !== '' &&
             postData[index].reply.push({
-                replyUserName: 'jaepani5015', replyUserComment: selectReplyInput[index].value
+                replyUserName: randomNickname, replyUserComment: selectReplyInput[index].value
             });
             selectReplyInput[index].value = '';
 
@@ -321,6 +322,52 @@ const inputReply = () => {
     });
 }
 
+const createAsideUser = () => {
+    const selectAsideWrap = document.querySelector('.aside__wrap');
+    const div = document.createElement('div');
+    div.classList.add('aside__user');
+    div.innerHTML = `
+        <img src=${asideData.user.userProfile} alt="user image" class="aside__userImage"/>
+        <div class="adise__user__wrap">
+            <div class="aside__userId">${asideData.user.userId}</div>
+            <div class="aside__userName">${asideData.user.userNickname}</div>
+        </div>
+        <div class="aside__changeUser">전환</div>
+    `;
+    selectAsideWrap.prepend(div);
+}
+
+const createAsideRecommend = () => {
+    const selectRecommendsTop = document.querySelector('.recommends__top');
+    asideData.recommend.forEach((data, index) => {
+        const div = document.createElement('div');
+        div.classList.add('recommends__userList');
+        div.innerHTML = `
+            <div class="recommends__user">
+                <img src=${data.userProfile} alt="user image" class="aside__userImage">
+                <div class="recommends__userWrap">
+<!--                    <div class="recommends__userId">${data.userId}</div>
+                    <div class="recommends__userName">${data.whoFollow}님이 팔로우 합니다.</div>-->
+                    <div class="recommends__userId">${makeid()}</div>
+                    <div class="recommends__userName">${makeid()}님이 팔로우 합니다.</div>
+                </div>
+                <div class="recommends__changeUser">팔로우</div>
+            </div>
+        `;
+        selectRecommendsTop.appendChild(div);
+    });
+}
+
+function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
 createStoryList();
 createContentHeader();
 createContentImages();
@@ -336,3 +383,5 @@ likeButtonClick();
 bookMarkButtonClick();
 inputReply();
 imageArrowClickAndCountMove();
+createAsideUser();
+createAsideRecommend();

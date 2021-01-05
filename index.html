@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41c5389666.js" crossorigin="anonymous"></script>
-    <script src="/data.js"></script>
+    <script src="/data.js" defer></script>
     <script src="/index.js" defer></script>
     <title>Instagram</title>
 </head>
@@ -32,16 +32,7 @@
                 <div class="menu__home"><i class="fas fa-home"></i></div>
                 <div class="menu__dm"><i class="far fa-comment-alt"></i></div>
                 <div class="menu__content"><i class="fab fa-wpexplorer"></i></div>
-                <div class="menu__like">
-                    <i class="far fa-heart"></i>
-                    <div class="alert__wrap hidden">
-                        <div class="alert__profile">프로필</div>
-                        <div class="alert__saved">저장됨</div>
-                        <div class="alert__setting">설정</div>
-                        <div class="alert__accountConversion">계정 전환</div>
-                        <div class="alert__logout">로그아웃</div>
-                    </div>
-                </div>
+                <div class="menu__like"><i class="far fa-heart"></i></div>
                 <div class="menu__profile">
                     <img src="./images/profile.jpg" alt="user profile" class="userInfo__user">
                     <div class="userInfos__wrap hidden">
@@ -59,56 +50,24 @@
 </nav>
 
 <section id="section__root">
-
-    <!-- Section -->
     <section id="section">
         <div class="section__wrap">
-            <!-- Section Story -->
             <div class="section__story">
-
-                <!-- Section Story Arrow -->
                 <div class="section__story__arrowLeft hidden"><i class="fas fa-arrow-circle-left aaa"></i></div>
                 <div class="section__story__arrowRight"><i class="fas fa-arrow-circle-right bbb"></i></div>
-
-                <!-- width 67px / 부모 width 600px -->
                 <div class="section__story__slider">
                 </div>
-
             </div>
-            <!-- Section Content End -->
         </div>
-        <!-- Section Wrap End -->
     </section>
 
     <!-- Aside -->
-    <aside id="aside" class="">
+    <aside id="aside">
         <div class="aside__wrap">
-            <!-- Aside User -->
-            <div class="aside__user">
-                <img src="./images/profile.jpg" alt="user image" class="aside__userImage"/>
-                <div class="adise__user__wrap">
-                    <div class="aside__userId">jaehwan0917</div>
-                    <div class="aside__userName">JaePaNi</div>
-                </div>
-                <div class="aside__changeUser">전환</div>
-            </div>
-
-            <!-- Aside Recommend -->
             <div class="aside__recommends">
                 <div class="recommends__top">
                     <span class="recommends__title">회원님을 위한 추천</span>
                     <span class="recommends__moreShow">모두 보기</span>
-                </div>
-
-                <div class="recommends__userList">
-                    <div class="recommends__user">
-                        <img src="./images/profile.jpg" alt="user image" class="aside__userImage">
-                        <div class="recommends__userWrap">
-                            <div class="recommends__userId">jaehwan0917</div>
-                            <div class="recommends__userName">jaepani501님이 팔로우 합니다.</div>
-                        </div>
-                        <div class="recommends__changeUser">팔로우</div>
-                    </div>
                 </div>
             </div>
         </div>
