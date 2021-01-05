@@ -185,7 +185,7 @@ const bottomButtons = () => {
     });
 }
 
-const likeButtonClick = () => {
+const bookMarkButtonClick = () => {
     const unBookmarkButtons = document.querySelectorAll('.button__unbookmark');
     const bookMarkButtons = document.querySelectorAll('.button__bookmark');
     unBookmarkButtons.forEach((data, index) => {
@@ -201,18 +201,32 @@ const likeButtonClick = () => {
     });
 }
 
-const bookMarkButtonClick = () => {
+const likeButtonClick = () => {
     const unLikeButtons = document.querySelectorAll('.button__unlike');
     const likeButtons = document.querySelectorAll('.button__like');
     unLikeButtons.forEach((data, index) => {
         unLikeButtons[index].addEventListener('click', () => {
             likeButtons[index].classList.remove('hidden');
+
+            //좋아요 눌렀을 경우 좋아요 갯수 리로딩
+            postData[index].likeCount += 1;
+            const selectBottomLikeCount = document.querySelectorAll('.bottom__likeCount');
+            selectBottomLikeCount[index].innerHTML = `
+                <span>${postData[index].likeCount > 3 ? "여러" : postData[index].likeCount} 명이 좋아합니다.</span>
+            `;
         });
     });
 
     likeButtons.forEach((data, index) => {
         likeButtons[index].addEventListener('click', () => {
             likeButtons[index].classList.add('hidden');
+
+            //좋아요 취소 눌렀을 경우 좋아요 갯수 리로딩
+            postData[index].likeCount -= 1;
+            const selectBottomLikeCount = document.querySelectorAll('.bottom__likeCount');
+            selectBottomLikeCount[index].innerHTML = `
+                <span>${postData[index].likeCount > 3 ? "여러" : postData[index].likeCount} 명이 좋아합니다.</span>
+            `;
         });
     });
 }
@@ -224,7 +238,7 @@ const bottomLikeCount = () => {
         const div = document.createElement('div');
         div.classList.add('bottom__likeCount');
         div.innerHTML = `
-            <span>${data.likeCount > 2 ? "여러" : data.likeCount} 명이 좋아합니다.</span>
+            <span>${data.likeCount > 3 ? "여러" : data.likeCount} 명이 좋아합니다.</span>
         `;
         selectSectionBottomWrap[index].appendChild(div);
     });
